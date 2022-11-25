@@ -18,3 +18,10 @@ Lexique::Lexique(string nom, string path){
     pch = strtok(NULL, " ,.-");
   }
 }
+
+void Print(const map<string, int> &m) {
+  for (const auto &n : m) {
+    std::cout << n.first << " = " << n.second << "; ";
+  }
+  std::cout << '\n';
+}

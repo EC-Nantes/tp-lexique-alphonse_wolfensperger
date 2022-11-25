@@ -19,8 +19,9 @@ Lexique::Lexique(string nom, string path){
   }
 }
 
-void Print(const map<string, int> &m) {
-  for (const auto &n : m) {
+void Lexique::PrintWords() {
+  //const map<string, int>& m = getWordsMap();
+  for (const auto &n : this->words) {
     std::cout << n.first << " = " << n.second << "; ";
   }
   std::cout << '\n';

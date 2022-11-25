@@ -13,7 +13,7 @@ int main() {
   // char path1[] = "tp1-Lexique-fichiers/lesMiserables_A.txt";
   // string path1 = "tp1-Lexique-fichiers/lesMiserables_A.txt";
   // const string *path_ptr = path1;
-  readFileIntoString(path1, str);
+  //readFileIntoString(path1, str);
 
   /*char *pch;
   printf("Splitting string \"%s\" into tokens:\n", &str[0]);
@@ -24,13 +24,6 @@ int main() {
   }*/
 
   Lexique lex("Les Miserables", "tp1-Lexique-fichiers/lesMiserables_A.txt");
-  print_map(lex);
+  lex.PrintWords();
   return 0;
-}
-
-void print_map(const map<string, int> &m) {
-  for (const auto &n : m) {
-    std::cout << n.first << " = " << n.second << "; ";
-  }
-  std::cout << '\n';
 }

@@ -24,15 +24,25 @@ void readFileIntoString(const string &path, string &content) {
 /**
  Supprime la ponctuation restante avant ou après un mot sous forme de string
  */
+
 void remove_punctuation(string &word) {
+  
   if (ispunct(static_cast<unsigned char>(word.back())) ||
       isspace(static_cast<unsigned char>(word.back()))) {
     word.erase(word.end() - 1);
-  } else if (ispunct(static_cast<unsigned char>(word.front())) ||
+  }  
+  if (ispunct(static_cast<unsigned char>(word.front())) ||
              isspace(static_cast<unsigned char>(word.back()))) {
     word.erase(word.begin());
   }
+  /*if (iscntrl(static_cast<unsigned char>(word.back()))) {
+    word.erase(word.end() - 1);
+  }*/
+  //IF peut être
 }
+
+/* */
+
 
 /**
  Mets la chaine de caractères passée en paramètre en minuscules

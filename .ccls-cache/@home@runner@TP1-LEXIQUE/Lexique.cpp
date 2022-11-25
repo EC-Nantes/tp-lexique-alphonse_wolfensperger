@@ -1,26 +1,34 @@
+
 #include <iostream>
 #include <map>
-#include "Lexique.h"
+#include <algorithm>
 #include "utilitaire.hpp"
+#include "Lexique.h"
 //#include "stdlib.h"
 using namespace std;
 
-Lexique::Lexique(string nom, string path){
+Lexique::Lexique(string nom, string path) {
   string str = "- This, a sample string.";
   readFileIntoString(path, str);
   toLower(str);
-
+  remove_punctuation(str);
+  str.erase(remove(str.begin(), str.end(), '\n'), str.cend());
   char *pch;
-  printf("Splitting string \"%s\" into tokens:\n", &str[0]);
+  string s;
+  // printf("Splitting string \"%s\" into tokens:\n", &str[0]);
   pch = strtok(&str[0], " ,.-");
+  
   while (pch != NULL) {
-    setWordIncOcc(pch);
+    s = *pch;
+    remove_punctuation(s);
+    setWordIncOcc(s);
+    printf("%s \n", pch);
     pch = strtok(NULL, " ,.-");
   }
 }
 
 void Lexique::PrintWords() {
-  //const map<string, int>& m = getWordsMap();
+  // const map<string, int>& m = getWordsMap();
   for (const auto &n : this->words) {
     std::cout << n.first << " = " << n.second << "; ";
   }

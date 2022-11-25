@@ -1,25 +1,25 @@
+#include <iostream>
+#include <string.h>
+
+using namespace std;
 
 class Lexique {
 private:
-  
+  string nom;  
+  int occurence;
 
 protected:
-  string nom;
-  //Bateau porte_avion,croiseur,contre_torpilleur1,contre_torpilleur2,torpilleur;
+
 public:
   // accesseurs en lecture
-  int getPosition_x() {return position.getCoordx();} 
-	int getPosition_y() {return position.getCoordy();}
-  Coord getPosition() {return position;}
-	int getOrientation() {return orientation;}
-	int getTaille() {return taille;}
-  bool getTabVie(int i) {return tabVie[i];}
-  //vector<bool> getTabVie() {return tabVie;}
-  bool getVie() {return vie;}
-  string getnom()  {return nom;}
+  string getNom() {return nom;} 
+  int getOccurence() {return occurence;} 
 
   // accesseurs en ecriture
-  void setPosition_x(int x) {this->position.setCoordx(x);} 
+  void setNom(int nom) {this->nom = nom;} 
+  void setNom(int nom) {this->nom = nom;}
+
+
 	void setPosition_y(int y) {this->position.setCoordx(y);} 
   void setPosition(int x, int y) {this->position.setCoord(x,y);}
 	void setOrientation(int orientation) {this->orientation = orientation;}

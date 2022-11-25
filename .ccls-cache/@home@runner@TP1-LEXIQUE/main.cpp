@@ -24,6 +24,6 @@ int main() {
   }*/
 
   Lexique lex("Les Miserables", "tp1-Lexique-fichiers/lesMiserables_A.txt");
-  lex.PrintWords();
+  //lex.PrintWords();
   return 0;
 }

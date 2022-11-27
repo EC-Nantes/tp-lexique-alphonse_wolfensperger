@@ -35,9 +35,6 @@ void remove_punctuation(string &word) {
              isspace(static_cast<unsigned char>(word.back()))) {
     word.erase(word.begin());
   }
-  /*if (iscntrl(static_cast<unsigned char>(word.back()))) {
-    word.erase(word.end() - 1);
-  }*/
   //IF peut être
 }
 
